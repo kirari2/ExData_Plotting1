@@ -10,6 +10,7 @@ list.files()
 library(dplyr)
 data <- read.table("./household_power_consumption.txt"
                    , sep = ";"
+                   , na.stings = "?"
                    , header = TRUE)
 data$DateTime <- paste(data$Date, data$Time)
 data$DateTime <- strptime(data$DateTime, "%d/%m/%Y %H:%M:%S")
